@@ -3,11 +3,11 @@ import asyncio
 from edge_tts import Communicate
 import io
 
-# App ပုံစံပြင်ဆင်ခြင်း
+# App Setting
 st.set_page_config(page_title="AI Voice Generator", page_icon="🎙️")
 
-# သင့်ပုံ၏ Direct Link
-IMAGE_URL = "https://i.ibb.co/L9s3Jz1F/image-2a1fb9.jpg" 
+# သင်ပေးပို့လိုက်သော ပုံ၏ Direct Link အစစ်
+IMAGE_URL = "https://i.ibb.co/3YRDpGs1/photo-2026-07-08-21-17-15.jpg" 
 
 # CSS - နောက်ခံပုံ နှင့် အရောင်စုံဘောင်များအတွက်
 page_bg_img = f"""

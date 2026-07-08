@@ -6,7 +6,7 @@ import io
 # App ပုံစံပြင်ဆင်ခြင်း
 st.set_page_config(page_title="AI Voice Generator", page_icon="🎙️")
 
-# သင်ပေးပို့လိုက်သော ပုံ၏ Direct Link
+# သင့်ပုံ၏ Direct Link
 IMAGE_URL = "https://i.ibb.co/L9s3Jz1F/image-2a1fb9.jpg" 
 
 # CSS - နောက်ခံပုံ နှင့် အရောင်စုံဘောင်များအတွက်
@@ -32,10 +32,10 @@ page_bg_img = f"""
 }}
 
 /* ခေါင်းစဉ်စာသား အရောင် */
-h1 {
-    color: white;
+h1 {{
+    color: white !important;
     text-shadow: 2px 2px 4px #000000;
-}
+}}
 </style>
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
@@ -70,7 +70,7 @@ if st.button("အသံဖန်တီးမည်"):
         with st.spinner('အသံဖိုင် စတင်ဖန်တီးနေပါပြီ...'):
             try:
                 loop = asyncio.new_event_loop()
-                asyncio.set_effect_loop(loop)
+                asyncio.set_event_loop(loop)
                 audio_bytes = loop.run_until_complete(get_audio_bytes(
                     text_data, voice_mapping[voice_option], rate_str
                 ))

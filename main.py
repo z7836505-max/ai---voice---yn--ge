@@ -6,11 +6,19 @@ import io
 # App Setting
 st.set_page_config(page_title="AI Voice Generator", page_icon="🎙️")
 
-# နောက်ခံအရောင် ပြောင်းရန် CSS
+# CSS - နောက်ခံအရောင်နှင့် ဘောင်လှလှလေးများအတွက်
 page_bg_img = """
 <style>
+/* နောက်ခံအရောင် */
 [data-testid="stAppViewContainer"] {
-background-color: #f0f2f6; 
+    background-color: #f0f2f6; 
+}
+
+/* Input ဖောင်တွေနဲ့ Textarea တွေမှာ ဘောင်ထည့်ခြင်း */
+.stTextArea textarea, .stSelectbox [data-baseweb="select"], .stSlider {
+    border: 2px solid #ff4b4b !important;
+    border-radius: 10px !important;
+    padding: 5px;
 }
 </style>
 """
@@ -57,8 +65,10 @@ if st.button("အသံဖန်တီးမည်"):
                     rate_str
                 ))
                 
+                # Browser မှာ နားထောင်လို့ရမည့် Player
                 st.audio(audio_bytes, format="audio/mp3")
                 
+                # Download လုပ်ရန်
                 st.download_button(
                     label="📥 အသံဖိုင် ဒေါင်းလော့ဆွဲရန်",
                     data=audio_bytes,
